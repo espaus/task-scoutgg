@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      List of tournaments
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <strong>Tournament name</strong>
+        </ion-col>
+        <ion-col>
+          <strong>Buy in</strong>
+        </ion-col>
+        <ion-col>
+          <strong>Prize Pool</strong>
+        </ion-col>
+        <ion-col>
+          <strong>More info</strong>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of items">
+        <ng-template [ngIf]="item.name != null">
+          <ion-col col-5>
+            {{item.name}}
+          </ion-col>
+          <ion-col>
+            {{item.buyIn}}
+          </ion-col>
+          <ion-col>
+            {{item.prizePoolAmount}}
+          </ion-col>
+          <ion-col>
+            <button ion-button (click)="goToInfoPage(item)">...</button>
+          </ion-col>
+        </ng-template>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Additional information
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+        <h2>General</h2>
+        <p>Name: {{item.name}}</p>
+        <p>Status: {{item.status}}</p>
+        <p>Game type: {{item.gameType}}</p><br>
+        <p>League(s):</p>
+        <p *ngFor="let league of leagues">{{league}}</p>
+    </ion-item>
+    <ion-item>
+        <h2>Schedule</h2>
+        <p>Start date/time: {{startDate}} --- {{startTime}}</p>
+        <p>End date/time: {{endDate}} --- {{endTime}}</p>    
+        <p>Number of weeks: {{gameweeks.length}}</p>
+        <p>Period: Weeks {{gameweeks[0]}} through {{gameweeks[gameweeks.length-1]}}</p>
+    </ion-item>
+    <ion-item>
+        <h2>Details</h2>
+        <p>Buy in: {{item.buyIn}}</p>
+        <p>Prize pool: {{item.prizePoolAmount}}</p>
+        <p>Max players per team: {{item.maxPlayersPerTeam}}</p>
+        <p>Number of teams: {{item.fantasyTeamsCount}}</p>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>
